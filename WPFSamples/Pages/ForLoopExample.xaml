@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*" MaxHeight="50"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
@@ -45,7 +45,7 @@
             <Label FontWeight="Bold">Action</Label>
             <RadioButton Content="Print" IsChecked="True"/>
         </StackPanel>
-        <Button Grid.Row="2" Content="Execute For" Click="OnForExecute" />
+        <Button Grid.Row="2" Content="Execute For Loop" Click="OnForExecute" />
         <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Auto">
             <TextBlock Name="ResultBlock"/>
         </ScrollViewer>
