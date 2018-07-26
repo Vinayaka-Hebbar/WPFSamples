@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System;
+using System.Security.Permissions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Interop;
+using WPFSamples.Model;
 
 namespace WPFSamples
 {
@@ -23,6 +16,17 @@ namespace WPFSamples
         public MainWindow()
         {
             InitializeComponent();
+            LoadConfig();
+        }
+
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(TypeList.SelectedIndex != -1)
+            {
+               var item = TypeList.SelectedItem as TypeDataPoint;
+
+                Frame.Content = Activator.CreateInstance(item.Type);
+            }
         }
     }
 }
