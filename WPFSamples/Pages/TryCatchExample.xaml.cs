@@ -17,8 +17,8 @@ namespace WPFSamples.Pages
         {
             try
             {
-                double a = double.Parse(ValueABox.Text);
-                double b = double.Parse(ValueBBox.Text);
+                int a = int.Parse(ValueABox.Text);
+                int b = int.Parse(ValueBBox.Text);
                 Result.Text = $"Result = {a / b}";
             }
             catch (Exception ex)

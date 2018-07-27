@@ -1,9 +1,6 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Security.Permissions;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Interop;
 using WPFSamples.Model;
 
 namespace WPFSamples

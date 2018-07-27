@@ -6,27 +6,17 @@ namespace WPFSamples
 {
     public partial class MainWindow
     {
-        private TypeModel model;
 
-        public TypeModel Model
-        {
-            get
-            {
-                return model;
-            }
-
-            set
-            {
-                model = value;
-            }
-        }
+        public TypeModel Model { get; set; }
 
         internal void LoadConfig()
         {
-            model = new TypeModel();
-            model.DataModel.Items.Add(new TypeDataPoint { Name = "Try Catch Example",Type = typeof(TryCatchExample) });
-            model.DataModel.Items.Add(new TypeDataPoint { Name = "For Loop Example", Type = typeof(ForLoopExample) });
-            TypeList.ItemsSource = model.DataModel.Items;
+            Model = new TypeModel();
+            Model.DataModel.Items.Add(new TypeDataPoint { Name = "Try Catch Example",Type = typeof(TryCatchExample) });
+            Model.DataModel.Items.Add(new TypeDataPoint { Name = "For Loop Example", Type = typeof(ForLoopExample) });
+            Model.DataModel.Items.Add(new TypeDataPoint { Name = "Array List Example", Type = typeof(ArrayListExample) });
+            Model.DataModel.Items.Add(new TypeDataPoint { Name = "File Example", Type = typeof(FileExample) });
+            TypeList.ItemsSource = Model.DataModel.Items;
         }
     }
 }
