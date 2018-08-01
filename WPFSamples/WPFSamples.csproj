@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,12 +60,22 @@
     </ApplicationDefinition>
     <Compile Include="Common\IDirectory.cs" />
     <Compile Include="Common\IInfo.cs" />
+    <Compile Include="Common\INode.cs" />
+    <Compile Include="Common\INodeCollection.cs" />
+    <Compile Include="Common\Node.cs" />
+    <Compile Include="Common\Operation.cs" />
+    <Compile Include="Common\OperationPerformer.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Model\FileDataPoint.cs" />
     <Compile Include="Model\ExplorerInformation.cs" />
     <Compile Include="Model\FolderDataPoint.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\PersonsInfo.cs" />
     <Compile Include="Pages\ArrayListExample.xaml.cs">
       <DependentUpon>ArrayListExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DelegateExample.xaml.cs">
+      <DependentUpon>DelegateExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\FileExample.xaml.cs">
       <DependentUpon>FileExample.xaml</DependentUpon>
@@ -72,6 +85,9 @@
     </Compile>
     <Compile Include="Pages\TryCatchExample.xaml.cs">
       <DependentUpon>TryCatchExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\XmlExample.xaml.cs">
+      <DependentUpon>XmlExample.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ExplorerModel.cs" />
     <Compile Include="ViewModel\TypeModel.cs" />
@@ -91,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DelegateExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\FileExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TryCatchExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\XmlExample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,6 +148,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
