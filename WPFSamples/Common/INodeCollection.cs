@@ -4,6 +4,7 @@ namespace WPFSamples.Common
 {
     public interface INodeCollection
     {
-        public IList<INode> Children { get; }
+        IEnumerable<INode> Children { get; }
+        string Name { get; }
     }
 }

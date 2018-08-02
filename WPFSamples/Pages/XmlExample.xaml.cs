@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Controls;
 using System.Xml.Serialization;
+using WPFSamples.Controls;
 using WPFSamples.Model;
 
 namespace WPFSamples.Pages
@@ -56,6 +57,18 @@ namespace WPFSamples.Pages
                 XmlSerializer serializer = new XmlSerializer(typeof(PersonsInfo));
                 if (serializer.Deserialize(stream) is PersonsInfo info)
                     PersonsList.ItemsSource = info.Persons;
+
+            }
+        }
+
+        private void OnGenerateTree(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Stream stream = null;
+            using (stream = File.OpenRead("sample.xml"))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(PersonsInfo));
+                if (serializer.Deserialize(stream) is PersonsInfo info)
+                    Output.Content = new XmlTreeView(info);
 
             }
         }

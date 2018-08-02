@@ -18,6 +18,7 @@ namespace WPFSamples
             Model.DataModel.Items.Add(new TypeDataPoint { Name = "File Example", Type = typeof(FileExample) });
             Model.DataModel.Items.Add(new TypeDataPoint { Name = "Delegate And Event Example", Type = typeof(DelegateExample) });
             Model.DataModel.Items.Add(new TypeDataPoint { Name = "Xml Example", Type = typeof(XmlExample) });
+            Model.DataModel.Items.Add(new TypeDataPoint { Name = "Database Example", Type = typeof(DatabaseExample) });
             TypeList.ItemsSource = Model.DataModel.Items;
         }
     }
