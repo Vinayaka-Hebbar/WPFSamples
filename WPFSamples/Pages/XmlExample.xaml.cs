@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Windows.Controls;
 using System.Xml.Serialization;
+using WPFSamples.Common;
 using WPFSamples.Controls;
 using WPFSamples.Model;
 
@@ -18,13 +19,11 @@ namespace WPFSamples.Pages
 
         private void OnXmlGenerate(object sender, System.Windows.RoutedEventArgs e)
         {
-            Person person = new Person
-            {
-                Name = "Vinayaka",
-                PhoneNo = "9611041801"
-            };
+            NodeCollection childs = new Persons("Vinayaka");
+            childs.Initialize();
+            childs.Add(new Person() { Name = "Son of ----" });
             PersonsInfo info = new PersonsInfo();
-            info.Persons.Add(person);
+            info.Persons.Add(childs);
             Stream stream = null;
             using(stream = File.Open("sample.xml", FileMode.Create))
             {
@@ -56,7 +55,7 @@ namespace WPFSamples.Pages
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(PersonsInfo));
                 if (serializer.Deserialize(stream) is PersonsInfo info)
-                    PersonsList.ItemsSource = info.Persons;
+                    PersonsList.ItemsSource = info;
 
             }
         }

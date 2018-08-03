@@ -4,9 +4,9 @@ using WPFSamples.Common;
 namespace WPFSamples.Model
 {
     [Serializable]
-    public class Person : INode
+    public class Person : Node
     {
-        public string Name { get; set; }
+        public override string Name { get; set; }
         public string PhoneNo { get; set; }
 
     }

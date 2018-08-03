@@ -10,10 +10,10 @@
     <ScrollViewer>
         <TreeView Name="XmlTree">
             <TreeView.Resources>
-                <HierarchicalDataTemplate DataType="{x:Type common:INodeCollection}" ItemsSource="{Binding Children}">
+                <HierarchicalDataTemplate DataType="{x:Type common:NodeCollection}" ItemsSource="{Binding Children}">
                     <TextBlock Text="{Binding Name}"/>
                 </HierarchicalDataTemplate>
-                <DataTemplate DataType="{x:Type common:INode}">
+                <DataTemplate DataType="{x:Type common:Node}">
                     <TextBlock Text="{Binding Name}"/>
                 </DataTemplate>
             </TreeView.Resources>

@@ -64,6 +64,7 @@
     <Compile Include="Common\INode.cs" />
     <Compile Include="Common\INodeCollection.cs" />
     <Compile Include="Common\Node.cs" />
+    <Compile Include="Common\NodeCollection.cs" />
     <Compile Include="Common\Operation.cs" />
     <Compile Include="Common\OperationPerformer.cs" />
     <Compile Include="Config.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Model\ExplorerInformation.cs" />
     <Compile Include="Model\FolderDataPoint.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Persons.cs" />
     <Compile Include="Model\PersonsInfo.cs" />
     <Compile Include="Pages\ArrayListExample.xaml.cs">
       <DependentUpon>ArrayListExample.xaml</DependentUpon>

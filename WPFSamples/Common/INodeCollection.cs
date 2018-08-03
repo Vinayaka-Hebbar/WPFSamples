@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 
 namespace WPFSamples.Common
 {
     public interface INodeCollection
     {
-        IEnumerable<INode> Children { get; }
+        Collection<Node> Children { get; }
         string Name { get; }
+        void Add(Node node);
     }
 }

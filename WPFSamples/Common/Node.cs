@@ -1,12 +1,14 @@
-﻿namespace WPFSamples.Common
+﻿using System;
+using System.Xml.Serialization;
+using WPFSamples.Model;
+
+namespace WPFSamples.Common
 {
+    [XmlInclude(typeof(Person))]
+    [XmlInclude(typeof(Persons))]
+    [Serializable]
     public class Node : INode
     {
-        public Node(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
     }
 }

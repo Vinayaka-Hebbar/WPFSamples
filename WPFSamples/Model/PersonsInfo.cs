@@ -5,29 +5,35 @@ using System.Collections.ObjectModel;
 using WPFSamples.Common;
 
 namespace WPFSamples.Model
-{ 
+{
     [Serializable]
-    public class PersonsInfo : INodeCollection,IEnumerable<Person>
+    public class PersonsInfo :NodeCollection, IEnumerable<Node>
     {
         public PersonsInfo()
         {
-            Persons = new ObservableCollection<Person>();
+            Persons = new Persons();
+            Name = "Root";
+            Persons.Initialize();
         }
 
-        public ObservableCollection<Person> Persons { get; set; }
+        public Persons Persons { get; set; }
 
-        public IEnumerable<INode> Children => Persons;
+        public override Collection<Node> Children => Persons.Children;
+        
 
-        public string Name => GetType().Name;
-
-        public IEnumerator<Person> GetEnumerator()
+        public override void Add(Node node)
         {
-            
+            Children.Add(node);
+        }
+
+        public IEnumerator<Node> GetEnumerator()
+        {
+            return Children.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return Children.GetEnumerator();
         }
     }
 }

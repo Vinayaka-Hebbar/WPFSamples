@@ -24,7 +24,7 @@
             <Button Click="OnXmlReadObject" Margin="5" Padding="5">Read Object</Button>
             <Button Click="OnGenerateTree" Margin="5" Padding="5">Generate Tree</Button>
         </StackPanel>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto">
             <ContentPresenter Name="Output" />
         </ScrollViewer>
         <ListView Name="PersonsList" Grid.Row="1" Grid.Column="1">
